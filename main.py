@@ -20,18 +20,6 @@ keyword = os.getenv('KEYWORD')
 stock_api_url = f'https://finnhub.io/api/v1/quote?symbol={ticker}&token={api_key}'
 response = requests.get(stock_api_url)
 
-
-# if response.status_code == 200:
-#     #if successful, parse JSON response and extract stock data
-#     data = response.json()
-#     #printing stock data
-#     print(f"Stock Data for {keyword}:\n")
-#     print(f"Current Price: {data['c']}\n")
-#     print(f"High Price of the day: {data['h']}\n")
-#     print(f"Low Price of the day: {data['l']}\n")
-#     print(f"Open Price of the day: {data['o']}\n")
-#     print(f"Previous Close Price: {data['pc']}\n")
-# else:
 #     print(f"Error fetching data: {response.status_code}")
 
 # Fetch the RSS feed for news articles related to the keyword 'META'
