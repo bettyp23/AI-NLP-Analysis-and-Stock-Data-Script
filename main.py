@@ -69,7 +69,7 @@ class OutputFormatter:
         percentage = int((current / total) * 100)
         bar_length = 30
         filled = int(bar_length * current / total)
-        bar = "?" * filled + "?" * (bar_length - filled)
+        bar = "#" * filled + "." * (bar_length - filled)
         print(f"\r{item}: [{bar}] {current}/{total} ({percentage}%)", end="", flush=True)
         if current == total:
             print()  # New line when complete
@@ -118,29 +118,29 @@ class OutputFormatter:
         if len(summary) > 150:
             summary = summary[:147] + "..."
         
-        print(f"\n?{'?' * 68}?")
-        print(f"?  Article {num}/{total:<58}?")
-        print(f"?{'?' * 68}?")
+        print(f"\n+{'-' * 68}+")
+        print(f"|  Article {num}/{total:<58}|")
+        print(f"+{'-' * 68}+")
         title = article.get('title', 'N/A')
         if len(title) > 55:
             title = title[:52] + "..."
-        print(f"?  Title:   {title:<55}?")
-        print(f"?  Date:    {published:<55}?")
-        print(f"?  Sentiment: {indicator:<20} Score: {score:>7.4f}          ?")
+        print(f"|  Title:   {title:<55}|")
+        print(f"|  Date:    {published:<55}|")
+        print(f"|  Sentiment: {indicator:<20} Score: {score:>7.4f}          |")
         if summary:
-            print(f"?  Summary:                                               ?")
+            print(f"|  Summary:                                               |")
             # Word wrap summary
             words = summary.split()
-            line = "?          "
+            line = "|          "
             for word in words:
                 if len(line + word) > 66:
-                    print(f"{line:<70}?")
-                    line = "?          " + word + " "
+                    print(f"{line:<70}|")
+                    line = "|          " + word + " "
                 else:
                     line += word + " "
-            if line.strip() != "?":
-                print(f"{line:<70}?")
-        print(f"?{'?' * 68}?")
+            if line.strip() != "|":
+                print(f"{line:<70}|")
+        print(f"+{'-' * 68}+")
     
     @staticmethod
     def sentiment_summary(total: int, overall_label: str, overall_score: float, 

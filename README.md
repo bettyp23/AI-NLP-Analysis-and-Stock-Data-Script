@@ -29,8 +29,7 @@ The goal of this project is to demonstrate how **AI** can be used to analyze the
 - ✅ Comprehensive error handling and validation
 - ✅ Progress indicators and formatted output
 - ✅ Optional JSON export for results
-- ✅ **GUI Application**: Beautiful Tkinter-based desktop interface
-- ✅ **CLI Application**: Professional terminal-based interface
+- ✅ **Professional CLI Interface**: Clean, formatted terminal output with ASCII-compatible characters
 
 ### **Recent Improvements**
 - 🆕 **Modular Architecture**: Object-oriented design with separate classes for stock data, news analysis, and sentiment aggregation
@@ -138,17 +137,9 @@ KEYWORD=Meta Platforms
 
 ### **Running the Script**
 
-**Command-Line Interface (CLI):**
 ```bash
 python main.py
 ```
-
-**Graphical User Interface (GUI):**
-```bash
-python gui_app.py
-```
-
-> **Note:** The GUI requires a display server (X11). If you're in a headless environment, use the CLI version. See `GUI_USAGE.md` and `HOW_TO_VIEW_GUI.md` for more details.
 
 ---
 
